@@ -18,7 +18,7 @@ function NewPackage() {
         })
         .then((resp) => resp.json())
         .then(() => {
-            navigate('/packages', { state: { message: 'Pacote criado com sucesso!' } })
+            navigate("/packages", { state: { message: "Pacote criado com sucesso!" } })
         })
         .catch((err) => console.error(err))
     }
