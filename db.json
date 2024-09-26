@@ -1,21 +1,33 @@
 {
-    "packages": [],
-    "categories": [
-        {
-            "id": 1,
-            "name": "Aventura e Natureza"
-        },
-        {
-            "id": 2,
-            "name": "Cultural e Histórico"
-        },
-        {
-            "id": 3,
-            "name": "Lazer e Relaxamento"
-        },
-        {
-            "id": 4,
-            "name": "Luxo e Exclusividade"
-        }
-    ]
+  "packages": [
+    {
+      "id": "88a0",
+      "name": "Projeto teste",
+      "budget": "2000",
+      "category": {
+        "id": "4",
+        "name": "Luxo e Exclusividade"
+      },
+      "cost": 0,
+      "sevices": []
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Aventura e Natureza"
+    },
+    {
+      "id": "2",
+      "name": "Cultural e Histórico"
+    },
+    {
+      "id": "3",
+      "name": "Lazer e Relaxamento"
+    },
+    {
+      "id": "4",
+      "name": "Luxo e Exclusividade"
+    }
+  ]
 }

@@ -1,13 +1,34 @@
+import { useNavigate } from 'react-router-dom'
 import PackageForm from "../layout/package/PackageForm"
 import styles from "./NewPackage.module.css"
 
 function NewPackage() {
+    const navigate = useNavigate()
+
+    const createPost = (pack) => {
+        pack.cost = 0
+        pack.sevices = []
+
+        fetch("http://localhost:5000/packages", {
+            method: "POST",
+            headers: {
+                "Content-Type": "apllication/json"
+            },
+            body: JSON.stringify(pack)
+        })
+        .then((resp) => resp.json())
+        .then(() => {
+            navigate('/packages', { message: 'Projeto criado com sucesso!' })
+        })
+        .catch((err) => console.error(err))
+    }
+
     return (
         <div className={styles.newpackage_container}>
             <h1>Criar Pacote</h1>
             <p>Crie seu pacote para depois adicionar serviços</p>
 
-            <PackageForm btnText="Criar pacote" />
+            <PackageForm handleSubmit={createPost} btnText="Criar pacote" />
         </div>
     )
 }
