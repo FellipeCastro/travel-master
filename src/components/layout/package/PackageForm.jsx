@@ -1,22 +1,33 @@
+import Input from "../../form/Input"
+import Select from "../../form/Select"
+import SubmitButton from "../../form/SubmitButton"
 import styles from "./PackageForm.module.css"
 
-function PackageForm() {
+function PackageForm({ btnText }) {
     return (
-        <form>
-            <div>
-                <input type="text" placeholder="Digite o nome do pacote" />
-            </div>
-            <div>
-                <input type="number" placeholder="Digite o orçamento do pacote" />
-            </div>
-            <div>
-                <select name="category_id">
-                    <option disabled selected>Selecione a categoria</option>
-                </select>
-            </div>
-            <div>
-                <input type="submit" value="Criar pacote" />
-            </div>
+        <form className={styles.form}>
+            <Input 
+                type="text"
+                text="Nome do pacote"
+                name="name"
+                placeholder="Insira o nome do pacote"
+            />
+
+            <Input 
+                type="number"
+                text="Orçamento do pacote"
+                name="budget"
+                placeholder="Insira o orçamento total do pacote"
+            />
+
+            <Select 
+                name="category_id"
+                text="Selecione a categoria"
+            />
+
+            <SubmitButton 
+                text={btnText}
+            />
         </form>
     )
 }

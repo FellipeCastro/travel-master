@@ -7,7 +7,7 @@ function NewPackage() {
             <h1>Criar Pacote</h1>
             <p>Crie seu pacote para depois adicionar serviços</p>
 
-            <PackageForm />
+            <PackageForm btnText="Criar projeto" />
         </div>
     )
 }
