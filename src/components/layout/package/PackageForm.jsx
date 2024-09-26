@@ -14,7 +14,7 @@ function PackageForm({ handleSubmit, btnText, packageData }) {
         fetch("http://localhost:5000/categories", {
             method: "GET",
             headers: {
-                "Content-Type": "apllication/json"
+                "Content-Type": "appllication/json"
             }
         })
         .then((resp) => resp.json())

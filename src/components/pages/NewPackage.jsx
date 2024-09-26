@@ -7,18 +7,18 @@ function NewPackage() {
 
     const createPost = (pack) => {
         pack.cost = 0
-        pack.sevices = []
+        pack.services = []
 
         fetch("http://localhost:5000/packages", {
             method: "POST",
             headers: {
-                "Content-Type": "apllication/json"
+                "Content-Type": "appllication/json"
             },
             body: JSON.stringify(pack)
         })
         .then((resp) => resp.json())
         .then(() => {
-            navigate('/packages', { message: 'Projeto criado com sucesso!' })
+            navigate('/packages', { state: { message: 'Pacote criado com sucesso!' } })
         })
         .catch((err) => console.error(err))
     }
