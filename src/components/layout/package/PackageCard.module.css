@@ -13,3 +13,74 @@
     margin-bottom: 1.5em;
     font-size: 1.5em;
 }
+
+.project_card p {
+    color: #7a7a7a;
+    margin-bottom: 1em;
+}
+
+.project_card p span {
+    font-weight: bold;
+}
+
+.category_text {
+    display: flex;
+    align-items: center;
+}
+
+.category_text span {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin-right: .5em;
+}
+
+.category_text .aventura {
+    background-color: #ffaebc;
+}
+
+.category_text .cultural {
+    background-color: #a0e7e5;
+}
+
+.category_text .lazer {
+    background-color: #b4f8c8;
+}
+
+.category_text .luxo {
+    background-color: #fbe7c6;
+}
+
+.project_card_actions {
+    margin-top: 1em;
+    display: flex;
+    align-items: center;
+}
+
+.project_card_actions a,
+.project_card_actions button {
+    text-decoration: none;
+    border: 1px solid #222;
+    background-color: #fff;
+    color: #222;
+    font-size: .9em;
+    padding: .5em 1em;
+    margin-right: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.project_card_actions svg {
+    margin-right: .5em;
+}
+
+.project_card_actions a:hover,
+.project_card_actions button:hover {
+    background-color: #222;
+    color: #ffbb33;
+}
