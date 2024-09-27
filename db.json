@@ -21,6 +21,17 @@
       },
       "cost": 0,
       "services": []
+    },
+    {
+      "id": "053b",
+      "name": "Pacote teste",
+      "budget": "5000",
+      "category": {
+        "id": "4",
+        "name": "Luxo"
+      },
+      "cost": 0,
+      "services": []
     }
   ],
   "categories": [

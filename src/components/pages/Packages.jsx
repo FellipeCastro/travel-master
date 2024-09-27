@@ -5,11 +5,13 @@ import Message from "../layout/Message"
 import Container from "../layout/Container"
 import LinkButton from "../layout/LinkButton"
 import PackageCard from "../layout/package/PackageCard"
+import Loading from "../layout/Loading"
 
 import styles from "./Packages.module.css"
 
 function Packages() {
     const [packs, setPacks] = useState([])
+    const [removeLoading, setRemoveLoading] = useState(false)
 
     const location = useLocation()
     let message = ""
@@ -18,17 +20,20 @@ function Packages() {
     }
 
     useEffect(() => {
-        fetch("http://localhost:5000/packages", {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json"
-            }
-        })
-        .then(resp => resp.json())
-        .then((data) => {
-            setPacks(data)
-        })
-        .catch((err) => console.error(err))
+        setTimeout(() => {
+            fetch("http://localhost:5000/packages", {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+            .then(resp => resp.json())
+            .then((data) => {
+                setPacks(data)
+                setRemoveLoading(true)
+            })
+            .catch((err) => console.error(err))
+        }, 500)
     }, [])
 
     return (
@@ -52,6 +57,11 @@ function Packages() {
                             />
                         )
                     })
+                )}
+
+                {!removeLoading && <Loading />}
+                {removeLoading && packs.length === 0 && (
+                    <p>Não há pacotes cadastrados</p>
                 )}
             </Container>
         </div>
