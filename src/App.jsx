@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './components/pages/Home'
-import Packaeges from './components/pages/Packages'
+import Packages from './components/pages/Packages'
 import Company from './components/Company'
 import Contact from './components/pages/Contact'
 import NewPackage from './components/pages/NewPackage'
@@ -16,7 +16,7 @@ function App() {
       <Container customClass="min_height">
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route exact path="/packages" element={<Packaeges />} />
+          <Route exact path="/packages" element={<Packages />} />
           <Route exact path="/company" element={<Company />} />
           <Route exact path="/contact" element={<Contact />} />
           <Route exact path="/newpackage" element={<NewPackage />} />
