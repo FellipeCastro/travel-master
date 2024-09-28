@@ -1,0 +1,47 @@
+.pack_details {
+    padding: 2em;
+}
+
+.pack_details h1, 
+.pack_details h2,
+.pack_details p {
+    margin-bottom: .5em;
+}
+
+.pack_details h1 {
+    background-color: #222;
+    color: #ffbb33;
+    padding: .5em;
+}
+
+.pack_details span {
+    font-weight: bold;
+}
+
+.details_container,
+.service_form_container {
+    border-bottom: 1px solid #7a7a7a;
+    margin-bottom: 1.2em;
+    padding-bottom: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.btn {
+    background-color: #222;
+    color: #fff;
+    padding: 1em 2em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.btn:hover {
+    color: #ffbb33;
+}
+
+.pack_info {
+    width: 100%;
+}
