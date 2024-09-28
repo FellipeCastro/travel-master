@@ -3,6 +3,8 @@ import { useState, useEffect } from "react"
 
 import Loading from "../layout/Loading"
 import Container from "../layout/Container"
+import PackageForm from "../layout/package/PackageForm"
+import Message from "../layout/Message"
 
 import styles from "./Package.module.css"
 
@@ -10,6 +12,8 @@ function Packages() {
     const { id } = useParams()
     const [pack, setPack] = useState([])
     const [showPackForm, setShowPackForm] = useState(false)
+    const [message, setMessage] = useState()
+    const [type, setType] = useState()
 
     useEffect(() => {
         setTimeout(() => {
@@ -27,6 +31,30 @@ function Packages() {
         }, 500)
     }, [id])
 
+    const editPost = (pack) => {
+        if (pack.budget < pack.cost) {
+            setMessage("O orçamento não pode ser menor que o custo do pacote!")
+            setType("error")
+            return false
+        }
+
+        fetch(`http://localhost:5000/packages/${id}`, {
+            method: "PATCH",
+            header: {
+                "Content-Type": "application/json"
+            }, 
+            body: JSON.stringify(pack)
+        })
+        .then((resp) => resp.json())
+        .then((data) => {
+            setPack(data)
+            setShowPackForm(false)
+            setMessage("Pacote atualizado!")
+            setType("success")
+        })
+        .catch((err) => console.error(err))
+    }
+
     const togglePackForm = () => {
         setShowPackForm(!showPackForm)
     }
@@ -36,6 +64,7 @@ function Packages() {
             {pack.name ? (
                 <div className={styles.pack_details}>
                     <Container customClass="column">
+                        {message && <Message type={type} msg={message} />}
                         <div className={styles.details_container}>
                             <h1>Pacote: {pack.name}</h1>
                             <button className={styles.btn} onClick={togglePackForm}>
@@ -49,7 +78,11 @@ function Packages() {
                                 </div>
                             ) : (
                                 <div className={styles.pack_info}>
-                                    <p>Detalhes do pacote</p>
+                                    <PackageForm 
+                                        handleSubmit={editPost} 
+                                        btnText="Concluir edição" 
+                                        packageData={pack} 
+                                    />
                                 </div>
                             )}
                         </div>
