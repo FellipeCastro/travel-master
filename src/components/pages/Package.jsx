@@ -12,6 +12,7 @@ function Packages() {
     const { id } = useParams()
     const [pack, setPack] = useState([])
     const [showPackForm, setShowPackForm] = useState(false)
+    const [showServiceForm, setShowServiceForm] = useState(false)
     const [message, setMessage] = useState()
     const [type, setType] = useState()
 
@@ -32,6 +33,8 @@ function Packages() {
     }, [id])
 
     const editPost = (pack) => {
+        setMessage("")
+
         if (pack.budget < pack.cost) {
             setMessage("O orçamento não pode ser menor que o custo do pacote!")
             setType("error")
@@ -57,6 +60,10 @@ function Packages() {
 
     const togglePackForm = () => {
         setShowPackForm(!showPackForm)
+    }
+
+    const toggleServiceForm = () => {
+        setShowServiceForm(!showServiceForm)
     }
 
     return (
@@ -86,6 +93,20 @@ function Packages() {
                                 </div>
                             )}
                         </div>
+                        <div className={styles.service_form_container}>
+                            <h2>Adicione um serviço</h2>
+                            <button className={styles.btn} onClick={toggleServiceForm}>
+                                {!showServiceForm ? "Adicionar serviço" : "Fechar"}
+                            </button>
+
+                            <div className={styles.pack_info}>
+                                {showServiceForm && <div>Formulário do serviço</div>}
+                            </div>
+                        </div>
+                        <h2>Serviços</h2>
+                        <Container customClass="start">
+                            <p>Itens do pacote</p>
+                        </Container>
                     </Container>
                 </div>
             ) : (
