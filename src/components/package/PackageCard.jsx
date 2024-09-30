@@ -9,13 +9,13 @@ function PackageCard({ id, name, budget, category, handleRemove }) {
     }
 
     return (
-        <div className={styles.project_card} key={id}>
+        <div className={styles.pack_card} key={id}>
             <h4>{name}</h4>
 
             <p><span>Orçamento:</span> R${budget}</p>
             <p className={styles.category_text}><span className={styles[category.toLowerCase()]}></span> {category}</p>
 
-            <div className={styles.project_card_actions}>
+            <div className={styles.pack_card_actions}>
                 <Link to={`/package/${id}`}>
                     <BsPencil /> Editar
                 </Link>

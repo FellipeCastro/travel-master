@@ -7,6 +7,7 @@ import Loading from "../layout/Loading"
 import Container from "../layout/Container"
 import PackageForm from "../package/PackageForm"
 import ServiceForm from "../service/ServiceForm"
+import ServiceCard from "../service/ServiceCard"
 import Message from "../layout/Message"
 
 import styles from "./Package.module.css"
@@ -14,6 +15,7 @@ import styles from "./Package.module.css"
 function Packages() {
     const { id } = useParams()
     const [pack, setPack] = useState([])
+    const [services, setServices] = useState([])
     const [showPackForm, setShowPackForm] = useState(false)
     const [showServiceForm, setShowServiceForm] = useState(false)
     const [message, setMessage] = useState()
@@ -30,6 +32,7 @@ function Packages() {
             .then((resp) => resp.json())
             .then((data) => {
                 setPack(data)
+                setServices(data.services)
             })
             .catch((err) => console.error(err))
         }, 500)
@@ -89,9 +92,12 @@ function Packages() {
         .then((resp) => resp.json())
         .then((data) => {
             console.log(data)
+            setShowServiceForm(false)
         })
         .catch((err) => console.error(err))
     }
+
+    const removeService = () => {}
 
     const togglePackForm = () => {
         setShowPackForm(!showPackForm)
@@ -115,8 +121,8 @@ function Packages() {
                             {!showPackForm ? (
                                 <div className={styles.pack_info}>
                                     <p><span>Categoria: </span> {pack.category.name}</p>
-                                    <p><span>Total de orçamento: </span>{pack.budget}</p>
-                                    <p><span>Total utilizado: </span> {pack.cost}</p>
+                                    <p><span>Total de orçamento: </span>R${pack.budget}</p>
+                                    <p><span>Total utilizado: </span> R${pack.cost}</p>
                                 </div>
                             ) : (
                                 <div className={styles.pack_info}>
@@ -146,7 +152,22 @@ function Packages() {
                         </div>
                         <h2>Serviços</h2>
                         <Container customClass="start">
-                            <p>Itens do pacote</p>
+                            {services.length > 0 ? (
+                                services.map((service) => {
+                                    return (
+                                        <ServiceCard 
+                                            id={service.id}
+                                            name={service.name}
+                                            cost={service.cost}
+                                            description={service.description}
+                                            key={service.id}
+                                            handleRemove={removeService}
+                                        />
+                                    )
+                                })
+                            ) : (
+                                <p>Não há serviços cadastrados</p>
+                            )}
                         </Container>
                     </Container>
                 </div>
