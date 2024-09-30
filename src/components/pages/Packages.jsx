@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Message from "../layout/Message"
 import Container from "../layout/Container"
 import LinkButton from "../layout/LinkButton"
-import PackageCard from "../layout/package/PackageCard"
+import PackageCard from "../package/PackageCard"
 import Loading from "../layout/Loading"
 
 import styles from "./Packages.module.css"

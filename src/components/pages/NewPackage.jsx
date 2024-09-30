@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import PackageForm from "../layout/package/PackageForm"
+import PackageForm from "../package/PackageForm"
 import styles from "./NewPackage.module.css"
 
 function NewPackage() {

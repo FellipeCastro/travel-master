@@ -1,9 +1,12 @@
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 
+import { parse, v4 as uuidv4 } from "uuid"
+
 import Loading from "../layout/Loading"
 import Container from "../layout/Container"
-import PackageForm from "../layout/package/PackageForm"
+import PackageForm from "../package/PackageForm"
+import ServiceForm from "../service/ServiceForm"
 import Message from "../layout/Message"
 
 import styles from "./Package.module.css"
@@ -20,7 +23,7 @@ function Packages() {
         setTimeout(() => {
             fetch(`http://localhost:5000/packages/${id}`, {
                 method: "GET",
-                header: {
+                headers: {
                     "Content-Type": "application/json"
                 }
             })
@@ -54,6 +57,38 @@ function Packages() {
             setShowPackForm(false)
             setMessage("Pacote atualizado!")
             setType("success")
+        })
+        .catch((err) => console.error(err))
+    }
+
+    const createService = (pack) => {
+        setMessage("")
+
+        const lastService = pack.services[pack.services.length - 1]
+        lastService.id = uuidv4()
+
+        const lastServiceCost = lastService.cost
+        const newCost = parseFloat(pack.cost) + parseFloat(lastServiceCost)
+
+        if (newCost > parseFloat(pack.budget)) {
+            setMessage("Orçamento ultrapassado, verifique o valor do serviço")
+            setType("error")
+            pack.services.pop()
+            return false
+        }
+
+        pack.cost = newCost
+
+        fetch(`http://localhost:5000/packages/${pack.id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(pack)
+        })
+        .then((resp) => resp.json())
+        .then((data) => {
+            console.log(data)
         })
         .catch((err) => console.error(err))
     }
@@ -100,7 +135,13 @@ function Packages() {
                             </button>
 
                             <div className={styles.pack_info}>
-                                {showServiceForm && <div>Formulário do serviço</div>}
+                                {showServiceForm && (
+                                    <ServiceForm 
+                                        handleSubmit={createService}
+                                        btnText="Adicionar serviço"
+                                        packData={pack}
+                                    />
+                                )}
                             </div>
                         </div>
                         <h2>Serviços</h2>

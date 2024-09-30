@@ -8,8 +8,15 @@
         "id": "1",
         "name": "Aventura"
       },
-      "cost": 0,
-      "services": []
+      "cost": 100,
+      "services": [
+        {
+          "name": "Serviço",
+          "cost": "100",
+          "description": "Faz isso aq",
+          "id": "ba77e6fb-0f05-4e74-ab39-8a8922b3cc4a"
+        }
+      ]
     },
     {
       "id": "290f",
@@ -37,6 +44,17 @@
       "id": "9b14",
       "name": "Teste",
       "budget": "10000",
+      "category": {
+        "id": "4",
+        "name": "Luxo"
+      },
+      "cost": 0,
+      "services": []
+    },
+    {
+      "id": "5110",
+      "name": "Teste Luxo",
+      "budget": "15000",
       "category": {
         "id": "4",
         "name": "Luxo"
