@@ -90,14 +90,34 @@ function Packages() {
             body: JSON.stringify(pack)
         })
         .then((resp) => resp.json())
-        .then((data) => {
-            console.log(data)
+        .then(() => {
             setShowServiceForm(false)
         })
         .catch((err) => console.error(err))
     }
 
-    const removeService = () => {}
+    const removeService = (id, cost) => {
+        const serviceUpdate = pack.services.filter((service) => service.id !== id)
+        const packUpdated = pack
+        packUpdated.services = serviceUpdate
+        packUpdated.cost = parseFloat(packUpdated.cost) - parseFloat(cost)
+
+        fetch(`http://localhost:5000/packages/${packUpdated.id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(pack)
+        })
+        .then((resp) => resp.json())
+        .then(() => {
+            setPack(packUpdated)
+            setServices(serviceUpdate)
+            setMessage("Serviço removido com sucesso!")
+            setType("success")
+        })
+        .catch((err) => console.error(err))
+    }
 
     const togglePackForm = () => {
         setShowPackForm(!showPackForm)

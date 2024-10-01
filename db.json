@@ -8,20 +8,8 @@
         "id": "1",
         "name": "Aventura"
       },
-      "cost": 1100,
+      "cost": 500,
       "services": [
-        {
-          "name": "Serviço",
-          "cost": "100",
-          "description": "Faz isso aq",
-          "id": "ba77e6fb-0f05-4e74-ab39-8a8922b3cc4a"
-        },
-        {
-          "name": "Contratar guia",
-          "cost": "500",
-          "description": "Contratar guia turistico para auxiliar na viagem",
-          "id": "ce920e93-6521-4e89-847c-b2d4444854fd"
-        },
         {
           "name": "Contratar guia",
           "cost": "500",
