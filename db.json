@@ -1,66 +1,250 @@
 {
   "packages": [
     {
-      "id": "a08c",
-      "name": "Pacote teste ",
-      "budget": "1500",
+      "id": "1a2b",
+      "name": "Aventura nas Montanhas",
+      "budget": "3500",
       "category": {
         "id": "1",
         "name": "Aventura"
       },
-      "cost": 500,
+      "cost": 2500,
       "services": [
         {
-          "name": "Contratar guia",
-          "cost": "500",
-          "description": "Contratar guia turistico para auxiliar na viagem",
-          "id": "994483ee-ad52-4973-a54f-577706c42afa"
+          "name": "Guia de Trilhas",
+          "cost": "800",
+          "description": "Contratação de um guia especializado em trilhas de alta montanha.",
+          "id": "service-001"
+        },
+        {
+          "name": "Equipamentos de Escalada",
+          "cost": "700",
+          "description": "Aluguel de equipamentos de segurança para escalada.",
+          "id": "service-002"
+        },
+        {
+          "name": "Seguro de Viagem",
+          "cost": "1000",
+          "description": "Cobertura completa para esportes de aventura.",
+          "id": "service-003"
         }
       ]
     },
     {
-      "id": "290f",
-      "name": "Teste",
-      "budget": "2000",
-      "category": {
-        "id": "3",
-        "name": "Lazer"
-      },
-      "cost": 0,
-      "services": []
-    },
-    {
-      "id": "7147",
-      "name": "Pacote ",
-      "budget": "1500",
+      "id": "2c3d",
+      "name": "Imersão Cultural em Paris",
+      "budget": "5000",
       "category": {
         "id": "2",
         "name": "Cultural"
       },
-      "cost": 0,
-      "services": []
+      "cost": 4500,
+      "services": [
+        {
+          "name": "Passeio guiado no Louvre",
+          "cost": "500",
+          "description": "Visita guiada ao Museu do Louvre com especialista em arte.",
+          "id": "service-004"
+        },
+        {
+          "name": "Tour pelos monumentos históricos",
+          "cost": "1000",
+          "description": "Tour privado pelos principais pontos históricos de Paris.",
+          "id": "service-005"
+        },
+        {
+          "name": "Jantar em restaurante estrelado",
+          "cost": "1500",
+          "description": "Experiência gastronômica em um restaurante com estrela Michelin.",
+          "id": "service-006"
+        },
+        {
+          "name": "Traslado aeroporto-hotel",
+          "cost": "1500",
+          "description": "Serviço de transporte privado de ida e volta.",
+          "id": "service-007"
+        }
+      ]
     },
     {
-      "id": "9b14",
-      "name": "Teste",
-      "budget": "10000",
+      "id": "3e4f",
+      "name": "Resort All-Inclusive no Caribe",
+      "budget": "12000",
       "category": {
         "id": "4",
         "name": "Luxo"
       },
-      "cost": 0,
-      "services": []
+      "cost": 10000,
+      "services": [
+        {
+          "name": "Suíte de Luxo",
+          "cost": "5000",
+          "description": "Acomodação em suíte com vista para o mar.",
+          "id": "service-008"
+        },
+        {
+          "name": "Spa e Massagens",
+          "cost": "2000",
+          "description": "Pacote de massagens e acesso ao spa.",
+          "id": "service-009"
+        },
+        {
+          "name": "Passeio de Iate",
+          "cost": "3000",
+          "description": "Passeio exclusivo em iate particular pelas águas caribenhas.",
+          "id": "service-010"
+        }
+      ]
     },
     {
-      "id": "5110",
-      "name": "Teste Luxo",
-      "budget": "15000",
+      "id": "4g5h",
+      "name": "Férias em Família na Disney",
+      "budget": "8000",
+      "category": {
+        "id": "3",
+        "name": "Lazer"
+      },
+      "cost": 6000,
+      "services": [
+        {
+          "name": "Ingressos para os parques temáticos",
+          "cost": "2000",
+          "description": "Acesso aos principais parques da Disney para toda a família.",
+          "id": "service-011"
+        },
+        {
+          "name": "Hotel Resort Disney",
+          "cost": "3000",
+          "description": "Hospedagem em resort dentro do complexo Disney.",
+          "id": "service-012"
+        },
+        {
+          "name": "Traslado Aeroporto-Resort",
+          "cost": "1000",
+          "description": "Serviço de transporte ida e volta do aeroporto para o resort.",
+          "id": "service-013"
+        }
+      ]
+    },
+    {
+      "id": "5i6j",
+      "name": "Safari na África",
+      "budget": "7000",
+      "category": {
+        "id": "1",
+        "name": "Aventura"
+      },
+      "cost": 6000,
+      "services": [
+        {
+          "name": "Safari com Guia Local",
+          "cost": "2500",
+          "description": "Safari guiado por especialista em fauna local, com visita a reservas naturais.",
+          "id": "service-014"
+        },
+        {
+          "name": "Acampamento de Luxo",
+          "cost": "2000",
+          "description": "Estadia em acampamento de luxo dentro de uma reserva natural.",
+          "id": "service-015"
+        },
+        {
+          "name": "Transporte 4x4",
+          "cost": "1500",
+          "description": "Veículo 4x4 para transporte durante o safari.",
+          "id": "service-016"
+        }
+      ]
+    },
+    {
+      "id": "6k7l",
+      "name": "Gastronômia na Itália",
+      "budget": "6000",
+      "category": {
+        "id": "2",
+        "name": "Cultural"
+      },
+      "cost": 5000,
+      "services": [
+        {
+          "name": "Tour por Vinícolas",
+          "cost": "2000",
+          "description": "Visita guiada a vinícolas famosas na Toscana, com degustação de vinhos.",
+          "id": "service-017"
+        },
+        {
+          "name": "Aulas de Culinária Italiana",
+          "cost": "1500",
+          "description": "Curso intensivo de culinária italiana com chefs locais.",
+          "id": "service-018"
+        },
+        {
+          "name": "Jantar em restaurante tradicional",
+          "cost": "1500",
+          "description": "Experiência gastronômica em restaurante tradicional com pratos típicos.",
+          "id": "service-019"
+        }
+      ]
+    },
+    {
+      "id": "7m8n",
+      "name": "Cruzeiro de Luxo pelo Mediterrâneo",
+      "budget": "20000",
       "category": {
         "id": "4",
         "name": "Luxo"
       },
-      "cost": 0,
-      "services": []
+      "cost": 18000,
+      "services": [
+        {
+          "name": "Suíte com Varanda Privativa",
+          "cost": "10000",
+          "description": "Acomodação em suíte de luxo com varanda e vista para o mar.",
+          "id": "service-020"
+        },
+        {
+          "name": "Excursões Exclusivas em Ilhas",
+          "cost": "5000",
+          "description": "Passeios exclusivos em ilhas do Mediterrâneo com guia.",
+          "id": "service-021"
+        },
+        {
+          "name": "Pacote Spa Completo",
+          "cost": "3000",
+          "description": "Acesso a tratamentos de spa e bem-estar durante o cruzeiro.",
+          "id": "service-022"
+        }
+      ]
+    },
+    {
+      "id": "8o9p",
+      "name": "Aventura na Patagônia",
+      "budget": "5000",
+      "category": {
+        "id": "1",
+        "name": "Aventura"
+      },
+      "cost": 4500,
+      "services": [
+        {
+          "name": "Trekking em Glaciares",
+          "cost": "2500",
+          "description": "Caminhada guiada pelos glaciares da Patagônia com guias especializados.",
+          "id": "service-023"
+        },
+        {
+          "name": "Hospedagem em Refúgio de Montanha",
+          "cost": "1000",
+          "description": "Estadia em refúgio de montanha com vista para a cordilheira.",
+          "id": "service-024"
+        },
+        {
+          "name": "Passeio de Barco pelos Lagos",
+          "cost": "1000",
+          "description": "Passeio de barco pelos lagos glaciais da região.",
+          "id": "service-025"
+        }
+      ]
     }
   ],
   "categories": [

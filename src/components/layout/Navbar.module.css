@@ -2,7 +2,14 @@
     display: flex;
     justify-content: space-between;
     background-color: #222;
-    padding: 1em;
+    padding: 2em 5%;
+}
+
+.logo {
+    color: #049DD9;
+    text-decoration: none;
+    font-size: 2em;
+    font-weight: bold;
 }
 
 .list {
@@ -22,5 +29,5 @@
 }
 
 .list li a:hover {
-    color: #ffbb33;
+    color: #049DD9;
 }
